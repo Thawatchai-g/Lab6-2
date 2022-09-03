@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        function calculate() {
+            var Inputnum1 = document.getElementsByName("numInput1")[0].value;
+            var Inputnum2 = document.getElementsByName("numInput2")[0].value;
+            var Input3 = document.getElementsByName("mathSymbol")[0].value;
+            
+            if(Input3=="+") {
+                var out = parseFloat(Inputnum1) + parseFloat(Inputnum2);
+            } else if (Input3=="-") {
+                var out = parseFloat(Inputnum1) - parseFloat(Inputnum2);
+            } else if (Input3=="*") {
+                var out = parseFloat(Inputnum1) * parseFloat(Inputnum2);
+            } else if (Input3=="/") {
+                var out = parseFloat(Inputnum1) / parseFloat(Inputnum2);
+            }
+
+            document.getElementsByName("output")[0].value= out;
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <input type="text" name="numInput1" size="6"></input>
+        <select name="mathSymbol">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+          </select>
+        <input type="text" name="numInput2" size="6"></input>
+        =
+        <input type="text" name="output" size="6"></input>
+        <input type="button" value="Compute" onClick="calculate()">
+    </form>
+</body>
+</html>
